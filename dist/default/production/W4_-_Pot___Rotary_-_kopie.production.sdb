@@ -1,0 +1,556 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"20 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/initialisation.c
+[e E1424 . `uc
+OUTPUT 0
+INPUT 1
+]
+[e E1428 . `uc
+DIGITAL 0
+ANALOG 1
+]
+"32
+[e E1420 . `uc
+ON 0
+OFF 1
+]
+"48
+[e E1443 . `uc
+CONFIG_CLK 0
+INTERNAL_CLK 1
+]
+[e E1455 . `uc
+KHZ032 0
+KHZ125 1
+KHZ250 2
+KHZ500 3
+MHZ001 4
+MHZ002 5
+MHZ004 6
+MHZ008 7
+]
+[e E1439 . `uc
+CONFIG_FOSC 0
+INTERNAL_FOSC 1
+]
+"58
+[e E1451 . `uc
+LTS_UNSTABLE 0
+LTS_STABLE 1
+]
+"60
+[e E1447 . `uc
+HTS_UNSTABLE 0
+HTS_STABLE 1
+]
+"75
+[e E1470 . `uc
+GIE_DISABLED 0
+GIE_ENABLED 1
+]
+[e E1474 . `uc
+EINT_DISABLED 0
+EINT_ENABLED 1
+]
+[e E1478 . `uc
+PEIE_DISABLED 0
+PEIE_ENABLED 1
+]
+[e E1482 . `uc
+T0INT_DISABLED 0
+T0INT_ENABLED 1
+]
+[e E1486 . `uc
+RBINT_DISABLED 0
+RBINT_ENABLED 1
+]
+[e E1490 . `uc
+FALLING_EDGE 0
+RISING_EDGE 1
+]
+"98
+[e E1494 . `uc
+INT_AWAITING 0
+INT_OCCURED 1
+]
+"119
+[e E1506 . `uc
+ADC_OFF 0
+ADC_ON 1
+]
+[e E1518 . `uc
+ADC_LEFT 0
+ADC_RIGHT 1
+]
+[e E1526 . `uc
+ADC_AN00 0
+ADC_AN01 1
+ADC_AN02 2
+ADC_AN03 3
+ADC_AN04 4
+ADC_AN05 5
+ADC_AN06 6
+ADC_AN07 7
+ADC_AN08 8
+ADC_AN09 9
+ADC_AN10 10
+ADC_AN11 11
+ADC_AN12 12
+ADC_AN13 13
+ADC_CVREF 14
+ADC_FXREF 15
+]
+[e E1544 . `uc
+ADC_FOSC02 0
+ADC_FOSC08 1
+ADC_FOSC32 2
+ADC_INTOSC 3
+]
+[e E1514 . `uc
+VREF_PLUSPIN 0
+VREF_VDD 1
+]
+[e E1510 . `uc
+VREF_MINPIN 0
+VREF_VSS 1
+]
+[e E1522 . `uc
+ADC_DONE 0
+ADC_IN_PROGRESS 1
+]
+"49 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[e E1506 . `uc
+ADC_OFF 0
+ADC_ON 1
+]
+[e E1518 . `uc
+ADC_LEFT 0
+ADC_RIGHT 1
+]
+[e E1526 . `uc
+ADC_AN00 0
+ADC_AN01 1
+ADC_AN02 2
+ADC_AN03 3
+ADC_AN04 4
+ADC_AN05 5
+ADC_AN06 6
+ADC_AN07 7
+ADC_AN08 8
+ADC_AN09 9
+ADC_AN10 10
+ADC_AN11 11
+ADC_AN12 12
+ADC_AN13 13
+ADC_CVREF 14
+ADC_FXREF 15
+]
+[e E1544 . `uc
+ADC_FOSC02 0
+ADC_FOSC08 1
+ADC_FOSC32 2
+ADC_INTOSC 3
+]
+[e E1514 . `uc
+VREF_PLUSPIN 0
+VREF_VDD 1
+]
+[e E1510 . `uc
+VREF_MINPIN 0
+VREF_VSS 1
+]
+[e E1522 . `uc
+ADC_DONE 0
+ADC_IN_PROGRESS 1
+]
+"51
+[e E1443 . `uc
+CONFIG_CLK 0
+INTERNAL_CLK 1
+]
+[e E1455 . `uc
+KHZ032 0
+KHZ125 1
+KHZ250 2
+KHZ500 3
+MHZ001 4
+MHZ002 5
+MHZ004 6
+MHZ008 7
+]
+[e E1439 . `uc
+CONFIG_FOSC 0
+INTERNAL_FOSC 1
+]
+"52
+[e E1470 . `uc
+GIE_DISABLED 0
+GIE_ENABLED 1
+]
+[e E1474 . `uc
+EINT_DISABLED 0
+EINT_ENABLED 1
+]
+[e E1478 . `uc
+PEIE_DISABLED 0
+PEIE_ENABLED 1
+]
+[e E1482 . `uc
+T0INT_DISABLED 0
+T0INT_ENABLED 1
+]
+[e E1486 . `uc
+RBINT_DISABLED 0
+RBINT_ENABLED 1
+]
+[e E1490 . `uc
+FALLING_EDGE 0
+RISING_EDGE 1
+]
+"55
+[e E1424 . `uc
+OUTPUT 0
+INPUT 1
+]
+[e E1428 . `uc
+DIGITAL 0
+ANALOG 1
+]
+"77
+[e E1420 . `uc
+ON 0
+OFF 1
+]
+"99
+[e E1494 . `uc
+INT_AWAITING 0
+INT_OCCURED 1
+]
+"20 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/rotary_encoder.c
+[e E1420 . `uc
+ROTATE_LEFT 1
+ROTATE_RIGHT 2
+]
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"48 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/initialisation.c
+[v _init_osc init_osc `(v  1 e 1 0 ]
+"75
+[v _init_int init_int `(v  1 e 1 0 ]
+"119
+[v _init_adc init_adc `(v  1 e 1 0 ]
+"18 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[v _main main `(v  1 e 1 0 ]
+"25
+[v _pic_loop pic_loop `(v  1 e 1 0 ]
+"48
+[v _pic_init pic_init `(v  1 e 1 0 ]
+"71
+[v _init_gpio init_gpio `(v  1 e 1 0 ]
+"92
+[v _isr isr `II(v  1 e 1 0 ]
+"3 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/potentiometer.c
+[v _populate_step_array populate_step_array `(v  1 e 1 0 ]
+"10
+[v _read_potentiometer read_potentiometer `(i  1 e 2 0 ]
+"7 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/rotary_encoder.c
+[v _parse_rotary parse_rotary `(v  1 e 1 0 ]
+"166 C:/Program Files/Microchip/MPLABX/v6.15/packs/Microchip/PIC16Fxxx_DFP/1.4.149/xc8\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S598 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245
+[u S607 . 1 `S598 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES607  1 e 1 @6 ]
+[s S113 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"482
+[s S122 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S127 . 1 `S113 1 . 1 0 `S122 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES127  1 e 1 @11 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S245 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1276
+[s S250 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S259 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S262 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+]
+[u S265 . 1 `S245 1 . 1 0 `S250 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES265  1 e 1 @31 ]
+[s S171 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1366
+[s S178 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S182 . 1 `S171 1 . 1 0 `S178 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES182  1 e 1 @129 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+[s S516 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1495
+[u S525 . 1 `S516 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES525  1 e 1 @134 ]
+[s S537 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 TRISE3 1 0 :1:3 
+]
+"1677
+[u S542 . 1 `S537 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES542  1 e 1 @137 ]
+[s S56 . 1 `uc 1 SCS 1 0 :1:0 
+`uc 1 LTS 1 0 :1:1 
+`uc 1 HTS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+]
+"1882
+[s S62 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S67 . 1 `S56 1 . 1 0 `S62 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES67  1 e 1 @143 ]
+[s S145 . 1 `uc 1 IOCB 1 0 :8:0 
+]
+"2436
+[s S147 . 1 `uc 1 IOCB0 1 0 :1:0 
+`uc 1 IOCB1 1 0 :1:1 
+`uc 1 IOCB2 1 0 :1:2 
+`uc 1 IOCB3 1 0 :1:3 
+`uc 1 IOCB4 1 0 :1:4 
+`uc 1 IOCB5 1 0 :1:5 
+`uc 1 IOCB6 1 0 :1:6 
+`uc 1 IOCB7 1 0 :1:7 
+]
+[u S156 . 1 `S145 1 . 1 0 `S147 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES156  1 e 1 @150 ]
+"2970
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S291 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 VCFG0 1 0 :1:4 
+`uc 1 VCFG1 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2991
+[u S297 . 1 `S291 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES297  1 e 1 @159 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+[s S550 . 1 `uc 1 ANS0 1 0 :1:0 
+`uc 1 ANS1 1 0 :1:1 
+`uc 1 ANS2 1 0 :1:2 
+`uc 1 ANS3 1 0 :1:3 
+`uc 1 ANS4 1 0 :1:4 
+`uc 1 ANS5 1 0 :1:5 
+`uc 1 ANS6 1 0 :1:6 
+`uc 1 ANS7 1 0 :1:7 
+]
+"3404
+[u S559 . 1 `S550 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES559  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"3903
+[v _GO GO `VEb  1 e 0 @249 ]
+"10 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[v _count count `uc  1 e 1 0 ]
+"18
+[v _main main `(v  1 e 1 0 ]
+{
+"23
+} 0
+"25
+[v _pic_loop pic_loop `(v  1 e 1 0 ]
+{
+"38
+[v pic_loop@i i `i  1 a 2 33 ]
+"32
+[v pic_loop@result result `i  1 a 2 31 ]
+"27
+[v pic_loop@stepArray stepArray `[4]i  1 a 8 23 ]
+"46
+} 0
+"10 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/potentiometer.c
+[v _read_potentiometer read_potentiometer `(i  1 e 2 0 ]
+{
+"21
+[v read_potentiometer@result result `i  1 a 2 2 ]
+"24
+} 0
+"3
+[v _populate_step_array populate_step_array `(v  1 e 1 0 ]
+{
+[v populate_step_array@array array `*.4i  1 a 1 wreg ]
+"5
+[v populate_step_array@i i `i  1 a 2 14 ]
+"3
+[v populate_step_array@array array `*.4i  1 a 1 wreg ]
+[v populate_step_array@size size `i  1 p 2 8 ]
+[v populate_step_array@potLimit potLimit `i  1 p 2 10 ]
+[v populate_step_array@array array `*.4i  1 a 1 16 ]
+"8
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.45\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"48 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[v _pic_init pic_init `(v  1 e 1 0 ]
+{
+[s S28 . 8 `*.39VEuc 1 tris 2 0 `*.39VEuc 1 lat 2 2 `*.39VEuc 1 ansel 2 4 `E1424 1 direction 1 6 `E1428 1 mode 1 7 ]
+"55
+[v pic_init@pin_config pin_config `[3]S28  1 a 24 12 ]
+[s S237 . 7 `E1506 1 ADON 1 0 `E1518 1 ADFM 1 1 `E1526 1 CHS 1 2 `E1544 1 ADCS 1 3 `E1514 1 VCFG0 1 4 `E1510 1 VCFG1 1 5 `E1522 1 GO_nDONE 1 6 ]
+"49
+[v pic_init@adc_config adc_config `S237  1 a 7 36 ]
+[s S106 . 6 `E1470 1 GIE 1 0 `E1474 1 EINT 1 1 `E1478 1 PEIE 1 2 `E1482 1 T0IE 1 3 `E1486 1 RBIE 1 4 `E1490 1 INTEDG 1 5 ]
+"52
+[v pic_init@int_config int_config `S106  1 a 6 43 ]
+[s S52 . 3 `E1443 1 SCS 1 0 `E1455 1 IRCF 1 1 `E1439 1 OSTS 1 2 ]
+"51
+[v pic_init@osc_config osc_config `S52  1 a 3 49 ]
+"48
+[v pic_init@F1593 F1593 `S237  1 s 7 F1593 ]
+"49
+[v pic_init@F1595 F1595 `S52  1 s 3 F1595 ]
+"51
+[v pic_init@F1597 F1597 `S106  1 s 6 F1597 ]
+"52
+[v pic_init@F1599 F1599 `[3]S28  1 s 24 F1599 ]
+"67
+} 0
+"48 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/initialisation.c
+[v _init_osc init_osc `(v  1 e 1 0 ]
+{
+[s S52 . 3 `E1443 1 SCS 1 0 `E1455 1 IRCF 1 1 `E1439 1 OSTS 1 2 ]
+[v init_osc@config config `S52  1 p 3 0 ]
+"62
+} 0
+"75
+[v _init_int init_int `(v  1 e 1 0 ]
+{
+[s S106 . 6 `E1470 1 GIE 1 0 `E1474 1 EINT 1 1 `E1478 1 PEIE 1 2 `E1482 1 T0IE 1 3 `E1486 1 RBIE 1 4 `E1490 1 INTEDG 1 5 ]
+[v init_int@config config `S106  1 p 6 0 ]
+"106
+} 0
+"71 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[v _init_gpio init_gpio `(v  1 e 1 0 ]
+{
+"89
+} 0
+"119 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/initialisation.c
+[v _init_adc init_adc `(v  1 e 1 0 ]
+{
+[s S237 . 7 `E1506 1 ADON 1 0 `E1518 1 ADFM 1 1 `E1526 1 CHS 1 2 `E1544 1 ADCS 1 3 `E1514 1 VCFG0 1 4 `E1510 1 VCFG1 1 5 `E1522 1 GO_nDONE 1 6 ]
+[v init_adc@config config `S237  1 p 7 0 ]
+"134
+} 0
+"92 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/main.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"102
+} 0
+"7 C:\Users\wesse\OneDrive - Hogeschool Inholland\inholland\TI2\S1 - Embedded Systems\W4 - Pot + Rotary - kopie\src/rotary_encoder.c
+[v _parse_rotary parse_rotary `(v  1 e 1 0 ]
+{
+[v parse_rotary@pinA pinA `uc  1 a 1 wreg ]
+"10
+[v parse_rotary@state state `uc  1 a 1 6 ]
+"7
+[v parse_rotary@pinA pinA `uc  1 a 1 wreg ]
+[v parse_rotary@pinB pinB `uc  1 p 1 0 ]
+[v parse_rotary@counter counter `*.1uc  1 p 1 1 ]
+[v parse_rotary@max max `uc  1 p 1 2 ]
+[v parse_rotary@min min `uc  1 p 1 3 ]
+"9
+[v parse_rotary@prevState prevState `uc  1 s 1 prevState ]
+"13
+[v parse_rotary@pinA pinA `uc  1 a 1 5 ]
+"32
+} 0
