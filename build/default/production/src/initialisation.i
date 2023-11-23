@@ -2703,15 +2703,6 @@ extern __bank0 __bit __timeout;
 typedef enum { OUTPUT = 0, INPUT = 1 } PinDirection;
 typedef enum { DIGITAL = 0, ANALOG = 1 } PinMode;
 
-typedef enum {
-  A0 = TRISAbits.TRISA0,
-  A1 = TRISAbits.TRISA1,
-  A2 = TRISAbits.TRISA2,
-  A3 = TRISAbits.TRISA3,
-  A4 = TRISAbits.TRISA4,
-  A5 = TRISAbits.TRISA5,
-} TRIS;
-
 typedef struct {
   volatile uint8_t* tris;
   volatile uint8_t* lat;

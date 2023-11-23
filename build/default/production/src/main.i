@@ -2704,15 +2704,6 @@ extern __bank0 __bit __timeout;
 typedef enum { OUTPUT = 0, INPUT = 1 } PinDirection;
 typedef enum { DIGITAL = 0, ANALOG = 1 } PinMode;
 
-typedef enum {
-  A0 = TRISAbits.TRISA0,
-  A1 = TRISAbits.TRISA1,
-  A2 = TRISAbits.TRISA2,
-  A3 = TRISAbits.TRISA3,
-  A4 = TRISAbits.TRISA4,
-  A5 = TRISAbits.TRISA5,
-} TRIS;
-
 typedef struct {
   volatile uint8_t* tris;
   volatile uint8_t* lat;
@@ -2830,6 +2821,7 @@ int read_potentiometer(void);
 # 8 "src/main.c" 2
 
 
+
 char count = 0;
 
 
@@ -2872,20 +2864,12 @@ void pic_init(void) {
   ADCConfig adc_config = { ADC_ON, ADC_RIGHT, ADC_AN07, ADC_FOSC02,
                                   VREF_PLUSPIN, VREF_MINPIN, ADC_IN_PROGRESS };
   OscillatorConfig osc_config = { INTERNAL_CLK, KHZ500, INTERNAL_FOSC };
-  InterruptConfig int_config = { GIE_ENABLED, EINT_ENABLED, PEIE_DISABLED,
+  InterruptConfig int_config = { GIE_ENABLED, EINT_DISABLED, PEIE_DISABLED,
                                 T0INT_DISABLED, RBINT_ENABLED, RISING_EDGE };
-
-  PinConfig pin_config[] = {
-    { &TRISA, &PORTA, &ANSEL, OUTPUT, DIGITAL },
-    { &TRISB, &PORTB, &ANSELH, INPUT, DIGITAL },
-
-    { &TRISEbits.TRISE2, &PORTE, &ANSELH, INPUT, ANALOG }
-  };
-
+# 64 "src/main.c"
   init_osc(osc_config);
   init_int(int_config);
   init_adc(adc_config);
-
   init_gpio();
 }
 
@@ -2893,18 +2877,13 @@ void pic_init(void) {
 
 void init_gpio(void) {
 
-
-
-
-  TRISA = 0;
+  TRISA = OUTPUT;
   PORTA = OFF;
 
-  TRISBbits.TRISB4 = 1;
-  TRISBbits.TRISB5 = 1;
+  TRISBbits.TRISB4 = INPUT;
+  TRISBbits.TRISB5 = INPUT;
 
-
-  TRISEbits.TRISE2 = 1;
-
+  TRISEbits.TRISE2 = INPUT;
 
   ANSEL = 0;
   ANSELH = 0;
@@ -2920,6 +2899,6 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
 
     INTCONbits.RBIF = INT_AWAITING;
-    INTCONbits.INTF = INT_AWAITING;
+
   }
 }

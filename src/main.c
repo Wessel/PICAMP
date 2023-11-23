@@ -50,7 +50,7 @@ void pic_init(void) {
   ADCConfig adc_config        = { ADC_ON, ADC_RIGHT, ADC_AN07, ADC_FOSC02,
                                   VREF_PLUSPIN, VREF_MINPIN, ADC_IN_PROGRESS };
   OscillatorConfig osc_config = { INTERNAL_CLK, KHZ500, INTERNAL_FOSC };
-  InterruptConfig int_config  = { GIE_ENABLED, EINT_ENABLED, PEIE_DISABLED,
+  InterruptConfig int_config  = { GIE_ENABLED, EINT_DISABLED, PEIE_DISABLED,
                                 T0INT_DISABLED, RBINT_ENABLED, RISING_EDGE };
 
   // PinConfig pin_config[] = {
@@ -93,6 +93,6 @@ void __interrupt() isr(void) {
 
     // Clear the Port B change interrupt flag
     INTCONbits.RBIF = INT_AWAITING;
-    INTCONbits.INTF = INT_AWAITING;
+    // INTCONbits.INTF = INT_AWAITING;
   }
 }
