@@ -1,5 +1,4 @@
 /* main.c */
-// todo(wessel): Make flags for pot/rotary turning
 
 #include "../include/config.h"
 
@@ -29,18 +28,20 @@ void pic_loop(void) {
   populate_step_array(stepArray, LED_AMOUNT, POT_LIMIT);
 
   while (1) {
-    // Parse result from potentiometer
-    int result = read_potentiometer();
+    if (count == 0) {
+      // Parse result from potentiometer
+      int result = read_potentiometer();
 
-    // Loop through all `stepArray`, check if the output of the potmeter
-    // (on `ADRES`) falls inbetween the steps - `DEADZONE`, if so execute
-    // An OR/AND bitshift operation in order to turn on the corresponding
-    // LED on `PORTA`.
-    for (int i = 0; i < LED_AMOUNT; i++) {
-      if (result > (stepArray[i] - DEADZONE)) {
-        PORTA = (unsigned char)(PORTA & ~(1 << i));
-      } else if (result <= (stepArray[i] - DEADZONE)) {
-        PORTA = (unsigned char)(PORTA | (1 << i));
+      // Loop through all `stepArray`, check if the output of the potmeter
+      // (on `ADRES`) falls inbetween the steps - `DEADZONE`, if so execute
+      // An OR/AND bitshift operation in order to turn on the corresponding
+      // LED on `PORTA`.
+      for (int i = 0; i < LED_AMOUNT; i++) {
+        if (result > (stepArray[i] - DEADZONE)) {
+          PORTA = (unsigned char)(PORTA & ~(1 << i));
+        } else if (result <= (stepArray[i] - DEADZONE)) {
+          PORTA = (unsigned char)(PORTA | (1 << i));
+        }
       }
     }
   }

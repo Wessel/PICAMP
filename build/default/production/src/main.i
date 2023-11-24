@@ -2843,18 +2843,20 @@ void pic_loop(void) {
   populate_step_array(stepArray, 4, 1023);
 
   while (1) {
+    if (count == 0) {
 
-    int result = read_potentiometer();
-
-
-
+      int result = read_potentiometer();
 
 
-    for (int i = 0; i < 4; i++) {
-      if (result > (stepArray[i] - 2)) {
-        PORTA = (unsigned char)(PORTA & ~(1 << i));
-      } else if (result <= (stepArray[i] - 2)) {
-        PORTA = (unsigned char)(PORTA | (1 << i));
+
+
+
+      for (int i = 0; i < 4; i++) {
+        if (result > (stepArray[i] - 2)) {
+          PORTA = (unsigned char)(PORTA & ~(1 << i));
+        } else if (result <= (stepArray[i] - 2)) {
+          PORTA = (unsigned char)(PORTA | (1 << i));
+        }
       }
     }
   }
@@ -2866,7 +2868,7 @@ void pic_init(void) {
   OscillatorConfig osc_config = { INTERNAL_CLK, KHZ500, INTERNAL_FOSC };
   InterruptConfig int_config = { GIE_ENABLED, EINT_DISABLED, PEIE_DISABLED,
                                 T0INT_DISABLED, RBINT_ENABLED, RISING_EDGE };
-# 64 "src/main.c"
+# 66 "src/main.c"
   init_osc(osc_config);
   init_int(int_config);
   init_adc(adc_config);
