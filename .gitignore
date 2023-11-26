@@ -16,3 +16,7 @@ output/
 build/
 dist/
 debug/
+tmp/
+src/tmp
+
+!.gitkeep
