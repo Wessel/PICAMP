@@ -2,7 +2,7 @@
 
 void populate_step_array(int *array, int size, int potLimit) {
   array[0] = potLimit / (size + 1);
-  for (int i = 0; i < size; i++){
+  for (int i = 0; i < size; i++) {
     array[i] = array[0] * (i + 1);
   }
 }
@@ -18,7 +18,5 @@ int read_potentiometer(void) {
 
   // Read the data from the potmeter pin (`E2`) registers, and combine
   // them into a single integer
-  int result = (ADRESH * 256) + ADRESL;
-
-  return result;
+  return (ADRESH << 8 | ADRESL);
 }
