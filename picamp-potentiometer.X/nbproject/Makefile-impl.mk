@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=W4 - Pot + Rotary - kopie
+PROJECTNAME=picamp-potentiometer.X
 
 # Active Configuration
 DEFAULTCONF=default

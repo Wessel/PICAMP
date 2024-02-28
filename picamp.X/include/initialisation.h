@@ -19,9 +19,9 @@ typedef enum { OUTPUT = 0,  INPUT = 1 }  PinDirection;
 typedef enum { DIGITAL = 0, ANALOG = 1 } PinMode;
 
 typedef struct {
-  volatile uint8_t* tris;
-  volatile uint8_t* lat;
-  volatile uint8_t* ansel;
+  volatile unsigned char* tris;
+  volatile unsigned char* lat;
+  volatile unsigned char* ansel;
   PinDirection direction;
   PinMode mode;
 } PinConfig;
@@ -67,52 +67,51 @@ typedef struct {
 } InterruptConfig;
 
 // #[declarations:adc]
-typedef enum { ADC_OFF = 0,      ADC_ON = 1 }          ADCEnable;
-typedef enum { VREF_MINPIN = 0,  VREF_VSS = 1 }        ADCVoltageReference1;
-typedef enum { VREF_PLUSPIN = 0, VREF_VDD = 1 }        ADCVoltageReference0;
-typedef enum { ADC_LEFT = 0,     ADC_RIGHT = 1 }       ADCResultFormat;
-typedef enum { ADC_DONE = 0,     ADC_IN_PROGRESS = 1 } ADCConversionStatus;
-typedef enum {
-  ADC_AN00  = 0b0000,
-  ADC_AN01  = 0b0001,
-  ADC_AN02  = 0b0010,
-  ADC_AN03  = 0b0011,
-  ADC_AN04  = 0b0100,
-  ADC_AN05  = 0b0101,
-  ADC_AN06  = 0b0110,
-  ADC_AN07  = 0b0111,
-  ADC_AN08  = 0b1000,
-  ADC_AN09  = 0b1001,
-  ADC_AN10  = 0b1010,
-  ADC_AN11  = 0b1011,
-  ADC_AN12  = 0b1100,
-  ADC_AN13  = 0b1101,
-  ADC_CVREF = 0b1110, // CVREF
-  ADC_FXREF = 0b1111  // Fixed Ref (0.6V fixed voltage reference)
-} ADCChannelSelect;
+// typedef enum { ADC_OFF = 0,      ADC_ON = 1 }          ADCEnable;
+// typedef enum { VREF_MINPIN = 0,  VREF_VSS = 1 }        ADCVoltageReference1;
+// typedef enum { VREF_PLUSPIN = 0, VREF_VDD = 1 }        ADCVoltageReference0;
+// typedef enum { ADC_LEFT = 0,     ADC_RIGHT = 1 }       ADCResultFormat;
+// typedef enum { ADC_DONE = 0,     ADC_IN_PROGRESS = 1 } ADCConversionStatus;
+// typedef enum {
+//   ADC_AN00  = 0b0000,
+//   ADC_AN01  = 0b0001,
+//   ADC_AN02  = 0b0010,
+//   ADC_AN03  = 0b0011,
+//   ADC_AN04  = 0b0100,
+//   ADC_AN05  = 0b0101,
+//   ADC_AN06  = 0b0110,
+//   ADC_AN07  = 0b0111,
+//   ADC_AN08  = 0b1000,
+//   ADC_AN09  = 0b1001,
+//   ADC_AN10  = 0b1010,
+//   ADC_AN11  = 0b1011,
+//   ADC_AN12  = 0b1100,
+//   ADC_AN13  = 0b1101,
+//   ADC_CVREF = 0b1110, // CVREF
+//   ADC_FXREF = 0b1111  // Fixed Ref (0.6V fixed voltage reference)
+// } ADCChannelSelect;
 
-typedef enum {
-  ADC_FOSC02 = 0b00,
-  ADC_FOSC08 = 0b01,
-  ADC_FOSC32 = 0b10,
-  ADC_INTOSC = 0b11 // (FRC) from a dedicated internal oscillator = 500 kHz max
-} ADCConversionClock;
+// typedef enum {
+//   ADC_FOSC02 = 0b00,
+//   ADC_FOSC08 = 0b01,
+//   ADC_FOSC32 = 0b10,
+//   ADC_INTOSC = 0b11 // (FRC) from a dedicated internal oscillator = 500 kHz max
+// } ADCConversionClock;
 
-typedef struct {
-  ADCEnable ADON;
-  ADCResultFormat ADFM;
-  ADCChannelSelect CHS;
-  ADCConversionClock ADCS;
-  ADCVoltageReference0 VCFG0;
-  ADCVoltageReference1 VCFG1;
-  ADCConversionStatus GO_nDONE;
-} ADCConfig;
+// typedef struct {
+//   ADCEnable ADON;
+//   ADCResultFormat ADFM;
+//   ADCChannelSelect CHS;
+//   ADCConversionClock ADCS;
+//   ADCVoltageReference0 VCFG0;
+//   ADCVoltageReference1 VCFG1;
+//   ADCConversionStatus GO_nDONE;
+// } ADCConfig;
 
 // #[declarations:functions]
-
 void init_osc(OscillatorConfig config);
 void init_int(InterruptConfig config);
-void init_adc(ADCConfig config);
-void init_gpio2(PinConfig* ports);
+void init_gpio(PinConfig ports[], int size);
+// void init_adc(ADCConfig config);
 
 #endif

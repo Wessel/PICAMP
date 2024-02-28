@@ -4,6 +4,7 @@
       "htc.h": "c",
       "initialisation.h": "c",
       "config.h": "c",
-      "rotary_encoder.h": "c"
+      "rotary_encoder.h": "c",
+      "potentiometer.h": "c"
     }
 }

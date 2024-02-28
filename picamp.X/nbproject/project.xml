@@ -7,7 +7,10 @@
             <creation-uuid>6e82f017-1e11-4f32-aea4-27829d036f6c</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../picamp-potentiometer.X</make-dep-project>
+                <make-dep-project>../picamp-rotary.X</make-dep-project>
+            </make-dep-projects>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
             </sourceRootList>

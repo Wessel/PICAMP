@@ -17,12 +17,12 @@
  * @return void
  */
 //todo (wessel): Find a fix for `bitfield` addressess
-void init_gpio2(PinConfig* config) {
+void init_gpio(PinConfig config[], int size) {
   // Calculate the size of `config`
-  uint8_t size = sizeof(config) / sizeof(config[0]);
+  // uint8_t size = sizeof(config) / sizeof(config[0]);
 
   // Loop through each pin, set their values
-  for (uint8_t i = 0; i < size; i++) {
+  for (int i = 0; i < size; i++) {
     // Set port direction and analog/digital select registers
     *config[i].tris = config[i].direction;
     *config[i].ansel = config[i].mode;
@@ -116,19 +116,19 @@ void init_int(InterruptConfig config) {
  *
  * @return void
 */
-void init_adc(ADCConfig config) {
-  // ADC enable
-  ADCON0bits.ADON = config.ADON;
-  // ADC cycle enable
-  ADCON0bits.GO_nDONE = config.GO_nDONE;
-  // Analog channel select
-  ADCON0bits.CHS = config.CHS;
-  // ADC clock select
-  ADCON0bits.ADCS = config.ADCS;
+// void init_adc(ADCConfig config) {
+//   // ADC enable
+//   ADCON0bits.ADON = config.ADON;
+//   // ADC cycle enable
+//   ADCON0bits.GO_nDONE = config.GO_nDONE;
+//   // Analog channel select
+//   ADCON0bits.CHS = config.CHS;
+//   // ADC clock select
+//   ADCON0bits.ADCS = config.ADCS;
 
-  // ADC result alignment
-  ADCON1bits.ADFM = config.ADFM;
-  // ADC voltage reference configuration
-  ADCON1bits.VCFG1 = config.VCFG1;
-  ADCON1bits.VCFG0 = config.VCFG0;
-}
+//   // ADC result alignment
+//   ADCON1bits.ADFM = config.ADFM;
+//   // ADC voltage reference configuration
+//   ADCON1bits.VCFG1 = config.VCFG1;
+//   ADCON1bits.VCFG0 = config.VCFG0;
+// }

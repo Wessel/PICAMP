@@ -26,6 +26,7 @@
 #define REB PORTBbits.RB5
 
 #define NPN
+#define PIC887A
 
 #define ENABLED 1
 #define DISABLED 0

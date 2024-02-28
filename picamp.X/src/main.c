@@ -1,18 +1,17 @@
 /* main.c */
-
+// Include all global config variables
 #include "../include/config.h"
 
+// Include library header files
 #include "../include/initialisation.h"
 #include "../include/rotary_encoder.h"
 #include "../include/potentiometer.h"
 
-//todo(wessel): Remove global
+// Rotary encoder position
 char count = 0;
 
 // Function declarations
 void pic_init(void);
-void init_gpio(void);
-
 void pic_loop(void);
 
 void main(void) {
@@ -23,6 +22,8 @@ void main(void) {
 }
 
 void pic_loop(void) {
+  // todo(burhan): WRITE_TO_LED(VOL: (read_pot() * 100) / 1023);
+  // todo: Remove code for LED showing after screen usage;
   // Initialize potentiometer step array
   int stepArray[LED_AMOUNT] = {0};
   populate_step_array(stepArray, LED_AMOUNT, POT_LIMIT);
@@ -30,7 +31,7 @@ void pic_loop(void) {
   while (1) {
     if (count == 0) {
       // Parse result from potentiometer
-      int result = read_potentiometer();
+      int result = read_pot();
 
       // Loop through all `stepArray`, check if the output of the potmeter
       // (on `ADRES`) falls inbetween the steps - `DEADZONE`, if so execute
@@ -48,52 +49,33 @@ void pic_loop(void) {
 }
 
 void pic_init(void) {
-  ADCConfig adc_config        = { ADC_ON, ADC_RIGHT, ADC_AN07, ADC_FOSC02,
-                                  VREF_PLUSPIN, VREF_MINPIN, ADC_IN_PROGRESS };
   OscillatorConfig osc_config = { INTERNAL_CLK, KHZ500, INTERNAL_FOSC };
-  InterruptConfig int_config  = { GIE_ENABLED, EINT_DISABLED, PEIE_DISABLED,
-                                T0INT_DISABLED, RBINT_ENABLED, RISING_EDGE };
-
-  // PinConfig pin_config[] = {
-  //   { &TRISA, &PORTA, &ANSEL, OUTPUT, DIGITAL }, // LEDs
-  //   { &TRISB, &PORTB, &ANSELH, INPUT, DIGITAL }, // Rotary encoder A
-  //   { &TRISBbits.TRISB5, &PORTBbits.RB5, &ANSELH,   INPUT, DIGITAL }, // Rotary encoder B
-  //   { &TRISEbits.TRISE2, &PORTE, &ANSELH, INPUT, ANALOG } // Potmeter
-  // };
-  // init_gpio2(pin_config);
-
   init_osc(osc_config);
-  init_int(int_config);
-  init_adc(adc_config);
-  init_gpio();
-}
 
-// #[initialisation:gpio]
-// todo(wessel): Make init_gpio() from initialisation.c work
-void init_gpio(void) {
-  // LED => output
-  TRISA = OUTPUT;
-  PORTA = OFF;
-  // Rotary => input
-  TRISBbits.TRISB4 = INPUT;
-  TRISBbits.TRISB5 = INPUT;
-  // Potentiometer => input
-  TRISEbits.TRISE2 = INPUT;
-  // Set all pins to digital
-  ANSEL = 0;
-  ANSELH = 0;
-  ANSELbits.ANS7 = 1;
+  PinConfig pin_config[] = { { &TRISA, &PORTA, &ANSEL, OUTPUT, DIGITAL } };
+  init_gpio(pin_config, 1);
+
+  // Moved to rotary_encoder.c
+  // InterruptConfig int_config  = { GIE_ENABLED, EINT_ENABLED, PEIE_ENABLED,
+  //                               T0INT_ENABLED, RBINT_ENABLED, FALLING_EDGE };
+  // init_int(int_config);
+
+  init_rotary(TRISBbits.TRISB4, TRISBbits.TRISB5);
+  init_pot(ADC_AN07, TRISEbits.TRISE2);
 }
 
 // #[routine:interrupt_service]
 void __interrupt() isr(void) {
-  if (INTCONbits.RBIF == 1) {
+  if (INTCONbits.RBIF == INT_OCCURED) {
     // Parse rotary changes into `count`, shift it into `PORTA`
     parse_rotary(REA, REB, &count, LED_AMOUNT, 0);
+
+    // todo(burhan): WRITE_TO_LED(IN: count);
+    // todo: Remove code for LED showing after screen usage;
     PORTA = (unsigned char) (~(1 << count));
 
     // Clear the Port B change interrupt flag
     INTCONbits.RBIF = INT_AWAITING;
-    // INTCONbits.INTF = INT_AWAITING;
+    INTCONbits.INTF = INT_AWAITING;
   }
 }
