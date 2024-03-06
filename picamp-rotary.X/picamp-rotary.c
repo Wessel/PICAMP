@@ -16,25 +16,25 @@ void __init_int(IOCPin RBA, IOCPin RBB) {
   INTCONbits.RBIE = 1;
 
   switch (RBA) {
-    case IOCB0: IOCBbits.IOCB0 = 1; break;
-    case IOCB1: IOCBbits.IOCB1 = 1; break;
-    case IOCB2: IOCBbits.IOCB2 = 1; break;
-    case IOCB3: IOCBbits.IOCB3 = 1; break;
-    case IOCB4: IOCBbits.IOCB4 = 1; break;
-    case IOCB5: IOCBbits.IOCB5 = 1; break;
-    case IOCB6: IOCBbits.IOCB6 = 1; break;
-    case IOCB7: IOCBbits.IOCB7 = 1; break;
+    case IOCRB0: IOCBbits.IOCB0 = 1; break;
+    case IOCRB1: IOCBbits.IOCB1 = 1; break;
+    case IOCRB2: IOCBbits.IOCB2 = 1; break;
+    case IOCRB3: IOCBbits.IOCB3 = 1; break;
+    case IOCRB4: IOCBbits.IOCB4 = 1; break;
+    case IOCRB5: IOCBbits.IOCB5 = 1; break;
+    case IOCRB6: IOCBbits.IOCB6 = 1; break;
+    case IOCRB7: IOCBbits.IOCB7 = 1; break;
   }
 
   switch (RBB) {
-    case IOCB0: IOCBbits.IOCB0 = 1; break;
-    case IOCB1: IOCBbits.IOCB1 = 1; break;
-    case IOCB2: IOCBbits.IOCB2 = 1; break;
-    case IOCB3: IOCBbits.IOCB3 = 1; break;
-    case IOCB4: IOCBbits.IOCB4 = 1; break;
-    case IOCB5: IOCBbits.IOCB5 = 1; break;
-    case IOCB6: IOCBbits.IOCB6 = 1; break;
-    case IOCB7: IOCBbits.IOCB7 = 1; break;
+    case IOCRB0: IOCBbits.IOCB0 = 1; break;
+    case IOCRB1: IOCBbits.IOCB1 = 1; break;
+    case IOCRB2: IOCBbits.IOCB2 = 1; break;
+    case IOCRB3: IOCBbits.IOCB3 = 1; break;
+    case IOCRB4: IOCBbits.IOCB4 = 1; break;
+    case IOCRB5: IOCBbits.IOCB5 = 1; break;
+    case IOCRB6: IOCBbits.IOCB6 = 1; break;
+    case IOCRB7: IOCBbits.IOCB7 = 1; break;
   }
 
   // Set interrupt edge
@@ -78,7 +78,7 @@ void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
  *
  * @return void
 */
-void init_rotary(volatile unsigned char* trisA, volatile unsigned char* trisB, IOCPin RBA, IOCPin RBB) {
+void init_rotary(IOCPin RBA, IOCPin RBB, volatile unsigned char* trisA, volatile unsigned char* trisB) {
   // Initialize the interrupt
   __init_int(RBA, RBB);
 

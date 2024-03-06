@@ -60,7 +60,7 @@ void pic_init(void) {
   //                               T0INT_ENABLED, RBINT_ENABLED, FALLING_EDGE };
   // init_int(int_config);
 
-  init_rotary(TRISBbits.TRISB4, TRISBbits.TRISB5, IOCB4, IOCB5);
+  init_rotary(IOCRB4, IOCRB5, TRISBbits.TRISB4, TRISBbits.TRISB5);
   init_pot(ADC_AN07, TRISEbits.TRISE2);
 }
 

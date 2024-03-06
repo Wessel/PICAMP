@@ -42,6 +42,8 @@
       case ADC_AN13: ANSELHbits.ANS13 = 1; break;
       default: break;
     }
+
+    return 1;
   }
 #elif PIC1829
 int __get_pod_data(void) {
