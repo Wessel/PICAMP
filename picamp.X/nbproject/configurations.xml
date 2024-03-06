@@ -9,7 +9,14 @@
         <itemPath>include/initialisation.h</itemPath>
         <itemPath>include/rotary_encoder.h</itemPath>
         <itemPath>include/potentiometer.h</itemPath>
+        <itemPath>include/HCMS2913.h</itemPath>
+        <itemPath>include/ascii.h</itemPath>
       </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,12 +28,8 @@
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <itemPath>src/initialisation.c</itemPath>
         <itemPath>src/main.c</itemPath>
+        <itemPath>src/HCMS2913.c</itemPath>
       </logicalFolder>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -40,10 +43,10 @@
         <targetDevice>PIC16F887</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>PK5Tool</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.45</languageToolchainVersion>
-        <platform>3</platform>
+        <languageToolchainVersion>2.46</languageToolchainVersion>
+        <platform>2</platform>
       </toolsSet>
       <packs>
         <pack name="PIC16Fxxx_DFP" vendor="Microchip" version="1.4.149"/>
