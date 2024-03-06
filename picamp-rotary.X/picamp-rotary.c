@@ -38,7 +38,16 @@ void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
 }
 #elif PIC1829
 void __init_int(void) {}
-void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {}
+void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
+  // Set `trisA` and `trisB` as inputs
+  *trisA = 1;
+  *trisB = 1;
+
+  // Set all channels to digital
+  ANSELA = 0;
+  ANSELB = 0;
+  ANSELC = 0;
+}
 #endif
 
 /** @brief Initialize the rotary encoder

@@ -75,12 +75,6 @@ void __init_adc(ADCChannelSelect analogPin) {
 
   }
 }
-#else
-int __get_pod_data(void) {
-  return 0;
-}
-
-void __init_adc(ADCChannelSelect analogPin) {}
 #endif
 
 /** @brief Initialize the potentiometer
