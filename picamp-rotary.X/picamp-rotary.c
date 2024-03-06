@@ -1,23 +1,41 @@
 // Rotary encoder structs and enums
 #include "./picamp-rotary.h"
 
+
 #define PIC16887A
 #ifdef PIC16887A
-void __init_int(void) {
+void __init_int(IOCPin RBA, IOCPin RBB) {
   // Global interrupt enable
   INTCONbits.GIE = 1;
   // External interrupt enable
   INTCONbits.INTE = 1;
   // Peripheral interrupt enable
-  // todo(wessel): Add PIR1, PIR2 registers
   INTCONbits.PEIE = 1;
 
   // PORTB Change Interrupt Enable
   INTCONbits.RBIE = 1;
 
-  // todo(wessel): make modulair
-  IOCBbits.IOCB4 = 1;
-  IOCBbits.IOCB5 = 1;
+  switch (RBA) {
+    case IOCB0: IOCBbits.IOCB0 = 1; break;
+    case IOCB1: IOCBbits.IOCB1 = 1; break;
+    case IOCB2: IOCBbits.IOCB2 = 1; break;
+    case IOCB3: IOCBbits.IOCB3 = 1; break;
+    case IOCB4: IOCBbits.IOCB4 = 1; break;
+    case IOCB5: IOCBbits.IOCB5 = 1; break;
+    case IOCB6: IOCBbits.IOCB6 = 1; break;
+    case IOCB7: IOCBbits.IOCB7 = 1; break;
+  }
+
+  switch (RBB) {
+    case IOCB0: IOCBbits.IOCB0 = 1; break;
+    case IOCB1: IOCBbits.IOCB1 = 1; break;
+    case IOCB2: IOCBbits.IOCB2 = 1; break;
+    case IOCB3: IOCBbits.IOCB3 = 1; break;
+    case IOCB4: IOCBbits.IOCB4 = 1; break;
+    case IOCB5: IOCBbits.IOCB5 = 1; break;
+    case IOCB6: IOCBbits.IOCB6 = 1; break;
+    case IOCB7: IOCBbits.IOCB7 = 1; break;
+  }
 
   // Set interrupt edge
   OPTION_REGbits.INTEDG = 0;
@@ -37,7 +55,7 @@ void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
   ANSELH = 0;
 }
 #elif PIC1829
-void __init_int(void) {}
+void __init_int(IOCPin RBA, IOCPin RBB) {}
 void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
   // Set `trisA` and `trisB` as inputs
   *trisA = 1;
@@ -60,9 +78,9 @@ void __init_pin(volatile unsigned char* trisA, volatile unsigned char* trisB) {
  *
  * @return void
 */
-void init_rotary(volatile unsigned char* trisA, volatile unsigned char* trisB) {
+void init_rotary(volatile unsigned char* trisA, volatile unsigned char* trisB, IOCPin RBA, IOCPin RBB) {
   // Initialize the interrupt
-  __init_int();
+  __init_int(RBA, RBB);
 
   // Initialize the pins
   __init_pin(trisA, trisB);
