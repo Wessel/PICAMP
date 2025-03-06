@@ -1,2 +1,0 @@
-
-DEL /F /Q output

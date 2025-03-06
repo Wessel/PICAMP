@@ -1,0 +1,6 @@
+!.gitkeep
+
+build/*
+debug/*
+dist/*
+queuelogs/*

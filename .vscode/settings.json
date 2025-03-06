@@ -5,6 +5,7 @@
       "initialisation.h": "c",
       "config.h": "c",
       "rotary_encoder.h": "c",
-      "potentiometer.h": "c"
+      "potentiometer.h": "c",
+      "picamp-potentiometer.h": "c"
     }
 }

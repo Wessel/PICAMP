@@ -1,0 +1,53 @@
+//PIC16F887
+const HCMS_settings screenSettings_887 = {
+    1,
+    //spi buffer
+    &SSPBUF,
+    {&SSPCON, 0},
+    {&SSPSTAT, 0},
+    //spi data
+    {&PORTC, 3},
+    {&TRISC, 4}, //SDI
+    {&TRISC, 5},
+    {&TRISC, 3},
+    //spi int
+    {&PIE1, 3},
+    {&PIR1, 3},
+    //spi settings
+    {&SSPCON, 4},
+    {&SSPSTAT, 6},
+    {&SSPCON, 5},
+    {&SSPSTAT, 7},
+    //screen pins
+    {&PORTC, 2},
+    {&PORTC, 6},
+    {&PORTC, 4},
+    {&PORTC, 7}
+};
+
+//PIC16F1829
+const HCMS_settings screenSettings_1829 = {
+    2,
+    //spi buffer
+    &SSP1BUF,
+    {&SSP1CON1, 0},
+    {&SSP1STAT, 0},
+    //spi data
+    {&PORTB, 6},
+    {&TRISC, 2}, //SDI
+    {&TRISC, 7},
+    {&TRISB, 6},
+    //spi int
+    {&PIE1, 3},
+    {&PIR1, 3},
+    //spi settings
+    {&SSP1CON1, 4},
+    {&SSP1STAT, 6},
+    {&SSP1CON1, 5},
+    {&SSP1STAT, 7},
+    //screen pins
+    {&PORTB, 4},
+    {&PORTB, 7},
+    {&PORTC, 2},
+    {&PORTB, 5}
+};
